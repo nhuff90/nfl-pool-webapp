@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f20f3d5-9c9f-491e-83b5-6c9482fe4491" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/data_old/record.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/GameScore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/repository/service/GameRepositoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/NflGamesUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/RecordFileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/python/NflGamesPythonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/data/games.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/data/picks.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/data/record.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/python/nfl-games.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client" beforeDir="false" afterPath="$PROJECT_DIR$/client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pages/others/others.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/others/others.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pages/others/others.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/others/others.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/styles/fonts/simple-line-icons/Simple-Line-Icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/styles/fonts/simple-line-icons/Simple-Line-Icons.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/data/games.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/data_old/games.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/data/picks.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/data_old/picks.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/data/record.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/PickController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/PickController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/PickWithGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/PickWithGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/GameCommandLineRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/GameCommandLineRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/PickCommandLineRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/PickCommandLineRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/PickUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/PickUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/ReadGamesFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/ReadPicksFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/ReadPicksFile.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="457226760">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="natehuff" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+              <item name="natehuff" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f20f3d5-9c9f-491e-83b5-6c9482fe4491" name="Default Changelist" comment="" />
+      <created>1567646296998</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567646296998</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
