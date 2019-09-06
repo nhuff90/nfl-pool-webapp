@@ -89,6 +89,7 @@ public class NflGamesUtils {
 
         return games;
     }
+
     public static void main(String[] args) {
         System.out.println("Here is Read game file:\n");
         try {

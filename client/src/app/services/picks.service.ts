@@ -25,7 +25,7 @@ export class PicksService {
     return ["Home Team", "Home Score", "vs.", "Away Team", "Away Score", "Line", "Game Progress", "Covering?"]};
 
   getCurrentWeek() {
-    return 2;
+    return 1;
   }
 
 }

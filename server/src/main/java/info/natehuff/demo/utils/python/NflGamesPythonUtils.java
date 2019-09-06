@@ -6,6 +6,7 @@ import org.omg.PortableInterceptor.ACTIVE;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.stream.Collectors;
 
 public class NflGamesPythonUtils {
 
@@ -51,11 +52,11 @@ public class NflGamesPythonUtils {
         }
     }
 
-    private static BufferedReader getAllGamesByWeek(int week) {
+    public static BufferedReader getAllGamesByWeek(int week) {
         return getGamesByWeek(week, null, null);
     }
 
-    public static BufferedReader getGamesByWeek(int week, Integer active, Integer completed) {
+    private static BufferedReader getGamesByWeek(int week, Integer active, Integer completed) {
         BufferedReader stdInput = null;
 
         try {
@@ -82,6 +83,6 @@ public class NflGamesPythonUtils {
 
     public static void main(String[] args) {
         System.out.println("Here is the standard output of the command:\n");
-        System.out.println(getGamesByWeek(1, GameProgress.NOT_STARTED));
+        System.out.println(getGamesByWeek(1, GameProgress.NOT_STARTED).lines().collect(Collectors.joining()));
     }
 }

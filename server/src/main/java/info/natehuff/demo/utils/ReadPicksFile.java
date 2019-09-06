@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ReadPicksFile {
+    private static String dataFileStr = "data/picks.dat";
 
     public static ArrayList<Pick> readPicksFile()
             throws IOException {
         ArrayList<Pick> picks = new ArrayList<>();
-        String fileStr = readInFile("src/main/resources/data/picks.dat");
+        String fileStr = readInFile(dataFileStr);
 
         String[] splitString = fileStr.split("----");
 
@@ -35,7 +36,7 @@ public class ReadPicksFile {
     public static ArrayList<Pick> readPicksFileByWeek(int week)
             throws IOException {
         ArrayList<Pick> picks = new ArrayList<>();
-        String fileStr = readInFile("src/main/resources/data/picks.dat");
+        String fileStr = readInFile(dataFileStr);
 
         String[] splitString = fileStr.split("----");
 
@@ -52,9 +53,12 @@ public class ReadPicksFile {
         return picks;
     }
 
-    public static String readInFile(String file)
+    public static String readInFile(String fileName)
             throws IOException {
-        Scanner scanner = new Scanner(new File(file));
+        ClassLoader classLoader = new ReadPicksFile().getClass().getClassLoader();
+
+        File file = new File(classLoader.getResource(fileName).getFile());
+        Scanner scanner = new Scanner(file);
         scanner.useDelimiter("\n");
 
         StringBuilder sb = new StringBuilder();

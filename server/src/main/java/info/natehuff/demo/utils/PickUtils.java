@@ -3,6 +3,7 @@ package info.natehuff.demo.utils;
 import info.natehuff.demo.dto.Game;
 import info.natehuff.demo.dto.Pick;
 import info.natehuff.demo.dto.PickWithGame;
+import info.natehuff.demo.dto.enums.GameProgress;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,22 +15,26 @@ public class PickUtils {
         String lineTemp = pick.getLine();
         lineTemp = (lineTemp.startsWith("+") ? lineTemp.substring(1) : lineTemp);
         float line = Float.parseFloat(lineTemp);
-        float homeAdjustedScore = Float.parseFloat(game.getHomeScore());
-        float awayAdjustedScore = Float.parseFloat(game.getAwayScore());
-        if (pick.getName().equalsIgnoreCase(game.getHomeTeam())) {
-            homeAdjustedScore = homeAdjustedScore + line;
-            if (homeAdjustedScore > awayAdjustedScore) {
-                return true;
+        if (game.getGameProgress() != GameProgress.NOT_STARTED.toString()) {
+            float homeAdjustedScore = Float.parseFloat(game.getHomeScore());
+            float awayAdjustedScore = Float.parseFloat(game.getAwayScore());
+            if (pick.getName().equalsIgnoreCase(game.getHomeTeam())) {
+                homeAdjustedScore = homeAdjustedScore + line;
+                if (homeAdjustedScore > awayAdjustedScore) {
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
-                return false;
+                awayAdjustedScore = awayAdjustedScore + line;
+                if (awayAdjustedScore > homeAdjustedScore) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
         } else {
-            awayAdjustedScore = awayAdjustedScore + line;
-            if (awayAdjustedScore > homeAdjustedScore) {
-                return true;
-            } else {
-                return false;
-            }
+            return false;
         }
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class RecordFileUtils {
 
-    private static String RECORD_FILE = "data/record.dat";
+    private static String RECORD_FILE = "src/main/resources/data/record.dat";
 
     public static String returnOverallRecord() throws IOException {
 
