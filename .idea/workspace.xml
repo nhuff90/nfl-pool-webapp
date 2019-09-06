@@ -2,37 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f20f3d5-9c9f-491e-83b5-6c9482fe4491" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/data_old/record.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/GameScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/repository/service/GameRepositoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/NflGamesUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/RecordFileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/python/NflGamesPythonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/data/games.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/data/picks.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/data/record.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/python/nfl-games.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client" beforeDir="false" afterPath="$PROJECT_DIR$/client" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/pages/others/others.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/others/others.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/pages/others/others.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pages/others/others.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/assets/styles/fonts/simple-line-icons/Simple-Line-Icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/styles/fonts/simple-line-icons/Simple-Line-Icons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/data/games.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/data_old/games.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/data/picks.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/data_old/picks.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/data/record.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/nfl-pool-webapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nfl-pool-webapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/services/picks.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/services/picks.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/data_old/picks.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/data_old/picks.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/data_old/record.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/data_old/record.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/PickController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/controller/PickController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/PickWithGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/dto/PickWithGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/GameCommandLineRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/GameCommandLineRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/PickCommandLineRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/runner/PickCommandLineRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python/src/nfl-games.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_current_games.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_current_games.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_current_games1.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_current_games1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores1.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores10.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores11.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores12.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores12.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores13.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores13.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores14.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores14.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores15.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores15.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores16.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores16.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores17.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores17.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores2.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores3.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores4.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores5.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores6.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores7.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores8.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/python_old/archive/nfl_scores9.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/python/archive/nfl_scores9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/NflGamesUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/NflGamesUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/PickUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/PickUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/ReadGamesFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/ReadPicksFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/ReadPicksFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/RecordFileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/RecordFileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/python/NflGamesPythonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/utils/python/NflGamesPythonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/data/picks.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/data/picks.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/data/record.dat" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/data/record.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/python/nfl-games.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/python/nfl-games2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,38 +48,39 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="457226760">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/server/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
@@ -85,6 +94,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -98,57 +108,6 @@
               <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
-              <item name="natehuff" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nfl-pool-webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nfl-pool-webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
-              <item name="natehuff" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -156,7 +115,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567702677119" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -180,20 +145,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567646296998</updated>
+      <workItem from="1567699677168" duration="78000" />
+      <workItem from="1567699797068" duration="983000" />
+      <workItem from="1567720217560" duration="640000" />
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1701000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -201,17 +171,115 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" visible="true" weight="0.32995737" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server/python_old/nfl-games.py" />
     <entry file="file://$PROJECT_DIR$/server/src/main/java/info/natehuff/demo/DemoApplication.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>nfl-pool-webapp</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="C:\workspace\nfl-pool-webapp\server" />
+    <option value="clean install" />
   </component>
 </project>
