@@ -1,9 +1,8 @@
 package info.natehuff.nfl.controller;
 
-import info.natehuff.nfl.dto.Pick;
+import info.natehuff.nfl.data.mysql.model.Pick;
+import info.natehuff.nfl.data.mysql.respository.WagerRepository;
 import info.natehuff.nfl.dto.PickWithGame;
-import info.natehuff.nfl.repository.GameRepository;
-import info.natehuff.nfl.repository.PickRepository;
 import info.natehuff.nfl.repository.service.GameRepositoryService;
 import info.natehuff.nfl.utils.PickUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,13 +16,12 @@ import java.util.stream.StreamSupport;
 
 @RestController
 public class PickController {
-    private PickRepository pickRepository;
+    private WagerRepository wagerRepository;
     //private GameRepository gameRepository;
     private GameRepositoryService gameService;
 
-    public PickController(PickRepository pickRepository, GameRepository gameRepository, GameRepositoryService gameService) {
-        this.pickRepository = pickRepository;
-        //this.gameRepository = gameRepository;
+    public PickController(WagerRepository wagerRepository, GameRepositoryService gameService) {
+        this.wagerRepository = wagerRepository;
         this.gameService = gameService;
     }
 
@@ -31,32 +29,25 @@ public class PickController {
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<Pick> getAllPicks() {
 
-        return StreamSupport.stream(pickRepository.findAll().spliterator(), false)
-                .filter(this::isGreat)
+        return StreamSupport.stream(wagerRepository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/picks/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<PickWithGame> getPicks(@PathVariable(value = "week") int week) {
-        return PickUtils.filterPicks(gameService.refreshGames(week), pickRepository.findPicksByWeek(week));
+        return PickUtils.filterPicks(gameService.refreshGames(week), wagerRepository.findPicksByWeek(week));
     }
 
     @GetMapping("/picks/record/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public String getRecord(@PathVariable(value = "week") int week) {
-        return PickUtils.getRecord(gameService.refreshGames(week), pickRepository.findPicksByWeek(week), week);
+        return PickUtils.getRecord(gameService.refreshGames(week), wagerRepository.findPicksByWeek(week), week);
     }
 
     @GetMapping("/picks/record")
     @CrossOrigin(origins = "http://localhost:4200")
     public String getOverallRecord() {
         return PickUtils.getOverallRecord();
-    }
-
-    private boolean isGreat(Pick pick) {
-        return !pick.getName().equals("Budweiser") &&
-                !pick.getName().equals("Coors Light") &&
-                !pick.getName().equals("PBR");
     }
 }

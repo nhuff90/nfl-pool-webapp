@@ -1,7 +1,7 @@
 package info.natehuff.nfl.utils;
 
+import info.natehuff.nfl.data.mysql.model.Pick;
 import info.natehuff.nfl.dto.Game;
-import info.natehuff.nfl.dto.Pick;
 import info.natehuff.nfl.dto.PickWithGame;
 import info.natehuff.nfl.dto.enums.GameProgress;
 
@@ -12,13 +12,11 @@ import java.util.List;
 public class PickUtils {
 
     public static boolean isCovering(Game game, Pick pick) {
-        String lineTemp = pick.getLine();
-        lineTemp = (lineTemp.startsWith("+") ? lineTemp.substring(1) : lineTemp);
-        float line = Float.parseFloat(lineTemp);
+        double line = pick.getLine();
         if (game.getGameProgress() != GameProgress.NOT_STARTED.toString()) {
-            float homeAdjustedScore = Float.parseFloat(game.getHomeScore());
-            float awayAdjustedScore = Float.parseFloat(game.getAwayScore());
-            if (pick.getName().equalsIgnoreCase(game.getHomeTeam())) {
+            double homeAdjustedScore = Double.parseDouble(game.getHomeScore());
+            double awayAdjustedScore = Double.parseDouble(game.getAwayScore());
+            if (pick.getTeam().equalsIgnoreCase(game.getHomeTeam())) {
                 homeAdjustedScore = homeAdjustedScore + line;
                 if (homeAdjustedScore > awayAdjustedScore) {
                     return true;
@@ -43,8 +41,8 @@ public class PickUtils {
         List<PickWithGame> picksToReturn = new ArrayList<>();
         for (Pick pick : allPicksThisWeek) {
             for (Game game : games) {
-                if (game.getHomeTeam().equals(pick.getName()) ||
-                        game.getAwayTeam().equals(pick.getName())) {
+                if (game.getHomeTeam().equals(pick.getTeam()) ||
+                        game.getAwayTeam().equals(pick.getTeam())) {
                     picksToReturn.add(new PickWithGame(pick, game, PickUtils.isCovering(game, pick)));
                     break;
                 }

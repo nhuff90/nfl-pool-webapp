@@ -1,7 +1,6 @@
 package info.natehuff.nfl.repository.service;
 
 import info.natehuff.nfl.dto.Game;
-import info.natehuff.nfl.repository.GameRepository;
 import info.natehuff.nfl.utils.NflGamesUtils;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +10,7 @@ import java.util.List;
 @Component
 public class GameRepositoryService {
 
-    private final GameRepository repository;
-
-    public GameRepositoryService(GameRepository repository) {
-        this.repository = repository;
-    }
+    public GameRepositoryService() {}
 
     public List<Game> refreshGames(int week) {
         List<Game> games = null;
@@ -24,11 +19,6 @@ public class GameRepositoryService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        /*System.out.println(Arrays.toString(games.toArray()));
-        games.forEach(game ->
-                repository.save(game)
-        );*/
 
         return games;
     }

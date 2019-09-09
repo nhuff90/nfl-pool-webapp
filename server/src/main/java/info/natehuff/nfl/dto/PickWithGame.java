@@ -1,5 +1,7 @@
 package info.natehuff.nfl.dto;
 
+import info.natehuff.nfl.data.mysql.model.Pick;
+
 public class PickWithGame {
 
     Pick pick;
