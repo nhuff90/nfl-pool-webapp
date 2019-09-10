@@ -19,6 +19,6 @@ export class GameService {
     return ["Home Team", "Home Score", "vs.", "Away Team", "Away Score"]};
 
   getCurrentWeek() {
-    return 2;
+    return 1;
   }
 }

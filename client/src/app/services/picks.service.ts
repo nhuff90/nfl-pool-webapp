@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 
 @Injectable()
 export class PicksService {
-
+  week = 1;
   constructor(private http: HttpClient) {}
 
 
@@ -13,19 +13,18 @@ export class PicksService {
     return this.http.get('http://localhost:8090/picks/' + week);
   }
 
-  getRecordWeek(week): Observable<string> {
-    return this.http.get('http://localhost:8090/picks/record/' + week, { responseType: 'text' });
+  getRecordWeek(week): Observable<any> {
+    return this.http.get('http://localhost:8090/picks/record/' + week);
   }
 
-  getOverallRecordWeek(): Observable<string> {
-    return this.http.get('http://localhost:8090/picks/record/', { responseType: 'text' });
+  getOverallRecordWeek(): Observable<any> {
+    return this.http.get('http://localhost:8090/picks/record/');
   }
 
   getColumns(): string[]{
-    return ["Home Team", "Home Score", "vs.", "Away Team", "Away Score", "Line", "Game Progress", "Covering?"]};
+    return ["Home Team", "Home Score", "vs.", "Away Team", "Away Score", "Line", "Risked", "To Win", "Game Progress", "Covering?"]};
 
   getCurrentWeek() {
-    return 1;
+    return this.week;
   }
-
 }

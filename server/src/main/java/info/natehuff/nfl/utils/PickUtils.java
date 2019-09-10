@@ -51,22 +51,6 @@ public class PickUtils {
         return picksToReturn;
     }
 
-    public static String getRecord(List<Game> games, List<Pick> allPicksThisWeek, int week) {
-        int wins = 0;
-        int losses = 0;
-        List<PickWithGame> picksWithGames = filterPicks(games, allPicksThisWeek);
-        for (PickWithGame pickWithGame : picksWithGames) {
-            if (isCovering(pickWithGame.getGame(), pickWithGame.getPick())) {
-                wins++;
-            } else {
-                losses++;
-            }
-        }
-        String ret = "" + wins + "-" + losses;
-        RecordFileUtils.writeWeeklyRecord(ret, week);
-        return ret;
-    }
-
     public static String getOverallRecord() {
 
         int wins = 0;

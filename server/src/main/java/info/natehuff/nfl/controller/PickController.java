@@ -1,7 +1,12 @@
 package info.natehuff.nfl.controller;
 
+import info.natehuff.nfl.data.mysql.PickResultService;
+import info.natehuff.nfl.data.mysql.WeeklyRecordService;
 import info.natehuff.nfl.data.mysql.model.Pick;
-import info.natehuff.nfl.data.mysql.respository.WagerRepository;
+import info.natehuff.nfl.data.mysql.model.Record;
+import info.natehuff.nfl.data.mysql.model.WeeklyRecord;
+import info.natehuff.nfl.data.mysql.respository.PickRepository;
+import info.natehuff.nfl.data.mysql.respository.WeeklyRecordRepository;
 import info.natehuff.nfl.dto.PickWithGame;
 import info.natehuff.nfl.repository.service.GameRepositoryService;
 import info.natehuff.nfl.utils.PickUtils;
@@ -11,43 +16,55 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @RestController
 public class PickController {
-    private WagerRepository wagerRepository;
-    //private GameRepository gameRepository;
+    private PickRepository pickRepository;
     private GameRepositoryService gameService;
+    private PickResultService pickResultService;
+    private WeeklyRecordRepository weeklyRecordRepository;
+    private WeeklyRecordService weeklyRecordService;
 
-    public PickController(WagerRepository wagerRepository, GameRepositoryService gameService) {
-        this.wagerRepository = wagerRepository;
+    public PickController(PickRepository pickRepository, GameRepositoryService gameService,
+                          PickResultService pickResultService, WeeklyRecordRepository weeklyRecordRepository,
+                          WeeklyRecordService weeklyRecordService) {
+        this.pickRepository = pickRepository;
         this.gameService = gameService;
+        this.pickResultService = pickResultService;
+        this.weeklyRecordRepository = weeklyRecordRepository;
+        this.weeklyRecordService = weeklyRecordService;
     }
 
     @GetMapping("/picks")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<Pick> getAllPicks() {
 
-        return StreamSupport.stream(wagerRepository.findAll().spliterator(), false)
+        return StreamSupport.stream(pickRepository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/picks/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<PickWithGame> getPicks(@PathVariable(value = "week") int week) {
-        return PickUtils.filterPicks(gameService.refreshGames(week), wagerRepository.findPicksByWeek(week));
+        List<PickWithGame> picksWithGame = PickUtils.filterPicks(gameService.refreshGames(week), pickRepository.findPicksByWeek(week));
+        pickResultService.saveCompletedResults(picksWithGame);
+        return picksWithGame;
     }
 
     @GetMapping("/picks/record/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public String getRecord(@PathVariable(value = "week") int week) {
-        return PickUtils.getRecord(gameService.refreshGames(week), wagerRepository.findPicksByWeek(week), week);
+    public WeeklyRecord getRecord(@PathVariable(value = "week") int week) {
+        weeklyRecordService.saveWeeklyRecord(PickUtils.filterPicks(gameService.refreshGames(week),
+                pickRepository.findPicksByWeek(week)));
+        return weeklyRecordRepository.findById(week).get();
     }
 
     @GetMapping("/picks/record")
     @CrossOrigin(origins = "http://localhost:4200")
-    public String getOverallRecord() {
-        return PickUtils.getOverallRecord();
+    public Record getOverallRecord() {
+        return weeklyRecordService.getOverallRecord();
     }
 }
