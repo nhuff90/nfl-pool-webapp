@@ -10,15 +10,15 @@ export class PicksService {
 
 
   getPicksByWeek(week): Observable<any> {
-    return this.http.get('http://localhost:8090/picks/' + week);
+    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/picks/' + week);
   }
 
   getRecordWeek(week): Observable<any> {
-    return this.http.get('http://localhost:8090/picks/record/' + week);
+    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/picks/record/' + week);
   }
 
   getOverallRecordWeek(): Observable<any> {
-    return this.http.get('http://localhost:8090/picks/record/');
+    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/picks/record/');
   }
 
   getColumns(): string[]{

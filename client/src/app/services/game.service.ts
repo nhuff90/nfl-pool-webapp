@@ -8,11 +8,11 @@ export class GameService {
   constructor(private http: HttpClient) {}
 
   getGamesByWeek(week): Observable<any> {
-    return this.http.get('http://localhost:8090/games/' + week);
+    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/games/' + week);
   }
 
   getActiveGamesByWeek(week): Observable<any> {
-    return this.http.get('http://localhost:8090/games/active/' + week);
+    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/games/active/' + week);
   }
 
   getColumns(): string[]{
