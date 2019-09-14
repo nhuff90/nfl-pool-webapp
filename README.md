@@ -1,6 +1,6 @@
 To Run:
 
-In client project :
+In client project:
 ng build –prod
 
 In server project:
@@ -8,13 +8,22 @@ clean package install -Dmaven.test.skip=true
 
 
 In docker - not using:
-docker build -t nfl-web-app .
-docker run -p 8090:8090 nfl-web-app
+#docker build -t nfl-web-app .
+#docker run -p 8090:8090 nfl-web-app
+
+locally:
+docker build -t nhuff90/nfl-app:prod .
+docker push nhuff90/nfl-app:prod
+
+on EC2:
+sudo docker pull nhuff90/nfl-app:prod
+sudo docker run -p 8090:8090 nhuff90/nfl-app:prod
 
 
 
 
 
+push jar file to EC2:
 scp -i C:\Users\Nate\Desktop\AWS\EC2KP.pem demo-0.0.1-SNAPSHOT.jar ec2-user@ec2-18-224-61-229.us-east-2.compute.amazonaws.com:/home/ec2-user
 
 https://www.nexsoftsys.com/articles/how-to-deploy-spring-boot-application-in-aws-ec2-server-quickly.html
@@ -22,9 +31,11 @@ https://www.nexsoftsys.com/articles/how-to-deploy-spring-boot-application-in-aws
 Copy JAR to EC2
 https://github.com/juanfrans/notes/wiki/Copying-Files-Between-Local-Computer-and-Instance-(AWS)
 
-On EC2
+On EC2 startup:
 sudo yum install java-1.8.0
 sudo yum remove java-1.7.0-openjdk
+sudo yum install docker -y
+sudo service docker start
 
 
 
