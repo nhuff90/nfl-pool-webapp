@@ -9,28 +9,6 @@ import java.util.stream.Collectors;
 
 public class NflGamesPythonUtils {
 
-    /*public static BufferedReader getScoresByWeek(int week) {
-
-        String s = null;
-        StringBuilder sb = new StringBuilder();
-        BufferedReader stdInput = null;
-
-        try {
-            String pythonScriptCommand = "python python/nfl_scores" + week + ".py";
-            Process p = Runtime.getRuntime().exec(pythonScriptCommand);
-
-            stdInput = new BufferedReader(new
-                    InputStreamReader(p.getInputStream()));
-        }
-        catch (IOException e) {
-            System.out.println("exception happened - here's what I know: ");
-            e.printStackTrace();
-            System.exit(-1);
-        }
-
-        return stdInput;
-    }*/
-
     /**
      * Returns games by week. Pass in Game Progress
      * @param week
@@ -60,11 +38,17 @@ public class NflGamesPythonUtils {
 
         try {
             String pythonScriptCommand;
+            String pythonFilePath = "/python/nfl-games.py";
+            //String pythonFilePath = "python/nfl-games.py";
+            System.out.println("This is the pthon path: " + pythonFilePath);
             if (active == null && completed == null) {
-                pythonScriptCommand = "python python/nfl-games.py " + week;
+                pythonScriptCommand = "python3 " + pythonFilePath + " " + week;
+                //pythonScriptCommand = "python " + pythonFilePath + " " + week;
             } else {
-                pythonScriptCommand = "python python/nfl-games.py " + week + " " + active + " " + completed;
+                pythonScriptCommand = "python3 " + pythonFilePath + " " + week + " " + active + " " + completed;
+                //pythonScriptCommand = "python " + pythonFilePath + " " + week + " " + active + " " + completed;
             }
+            System.out.println("This is the python scrip[t: " + pythonScriptCommand);
             Process p = Runtime.getRuntime().exec(pythonScriptCommand);
 
             stdInput = new BufferedReader(new
@@ -73,7 +57,6 @@ public class NflGamesPythonUtils {
         catch (IOException e) {
             System.out.println("exception happened - here's what I know: ");
             e.printStackTrace();
-            System.exit(-1);
         }
 
         return stdInput;

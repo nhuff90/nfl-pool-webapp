@@ -28,4 +28,24 @@ public class PickResultService {
             }
         }
     }
+
+    public double getWeeklyProfit(int week) {
+        double weeklyProfit = 0;
+        Iterable<PickResult> pickResults = pickResultRespository.findAll();
+        for (PickResult pickResult : pickResults) {
+            if (week == pickResult.getWeek()) {
+                weeklyProfit = weeklyProfit + pickResult.getNetProfit();
+            }
+        }
+        return weeklyProfit;
+    }
+
+    public double getOverallProfit() {
+        double overallProfit = 0;
+        Iterable<PickResult> pickResults = pickResultRespository.findAll();
+        for (PickResult pickResult : pickResults) {
+            overallProfit = overallProfit + pickResult.getNetProfit();
+        }
+        return overallProfit;
+    }
 }

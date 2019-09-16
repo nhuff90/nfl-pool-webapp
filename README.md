@@ -6,6 +6,35 @@ ng build –prod
 In server project:
 clean package install -Dmaven.test.skip=true
 
+CMD Docker:
+docker build -t nhuff90/nfl-app:prod .
+docker push nhuff90/nfl-app:prod
+
+
+EC2:
+sudo yum update
+sudo yum install java-1.8.0
+sudo yum remove java-1.7.0-openjdk
+sudo yum install docker -y
+sudo service docker start
+docker run -p 8090:8090 nhuff90/nfl-app:prod
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------OLD------------
+
 
 In docker - not using:
 #docker build -t nfl-web-app .
@@ -32,6 +61,7 @@ Copy JAR to EC2
 https://github.com/juanfrans/notes/wiki/Copying-Files-Between-Local-Computer-and-Instance-(AWS)
 
 On EC2 startup:
+sudo yum update
 sudo yum install java-1.8.0
 sudo yum remove java-1.7.0-openjdk
 sudo yum install docker -y

@@ -18,7 +18,6 @@ export class OthersComponent implements OnInit {
 
   ngOnInit() {
     this.selectedWeek = this.atService.getCurrentWeek();
-    this.columns = this.atService.getColumns();
     this.games = this.atService.getGamesByWeek(this.selectedWeek);
     this.games = this.atService.getActiveGamesByWeek(this.selectedWeek);
   }

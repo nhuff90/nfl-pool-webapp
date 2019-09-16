@@ -1,4 +1,4 @@
-package info.natehuff.nfl.data.mysql.model;
+package info.natehuff.nfl.dto;
 
 import lombok.NoArgsConstructor;
 

@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
   selectedWeek: number;
   picksWithGame: Observable<any[]>;
   columns: string[];
-  record: Observable<any[]>;
-  overallRecord: string;
+  weeklyStats: Observable<any[]>;
+  annualStats: Observable<any[]>;
 
   activeGames: number;
 
@@ -30,11 +30,11 @@ export class HomeComponent implements OnInit {
     this.columns = this.atService.getColumns();
     this.picksWithGame = this.atService.getPicksByWeek(this.selectedWeek);
     this.gameService.getActiveGamesByWeek(this.selectedWeek).subscribe(data => {this.activeGames = data.lengthFromService});
-    this.atService.getRecordWeek(this.selectedWeek).subscribe(res => {
-      this.record = res;
+    this.atService.getWeeklyStats(this.selectedWeek).subscribe(res => {
+      this.weeklyStats = res;
     });
-    this.atService.getOverallRecordWeek().subscribe(res => {
-      this.overallRecord = res;
+    this.atService.getAnnualStats().subscribe(res => {
+      this.annualStats = res;
     });
   }
 
@@ -43,11 +43,15 @@ export class HomeComponent implements OnInit {
     this.selectedWeek = week;
     this.picksWithGame = this.atService.getPicksByWeek(this.selectedWeek);
     this.gameService.getActiveGamesByWeek(this.selectedWeek).subscribe(data => {this.activeGames = data.lengthFromService});
-    this.atService.getRecordWeek(this.selectedWeek).subscribe(res => {
-      this.record = res;
+    this.atService.getWeeklyStats(this.selectedWeek).subscribe(res => {
+      this.weeklyStats = res;
     });
-    this.atService.getOverallRecordWeek().subscribe(res => {
-      this.overallRecord = res;
+    this.atService.getAnnualStats().subscribe(res => {
+      this.annualStats = res;
     });
+  }
+
+  getCurrentWeek() {
+    return this.gameService.getCurrentWeek();
   }
 }

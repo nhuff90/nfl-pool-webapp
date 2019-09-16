@@ -11,52 +11,6 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class NflGamesUtils {
-
-    /*public static ArrayList<GameScore> readGamesFile()
-            throws IOException {
-        ArrayList<GameScore> games = new ArrayList<>();
-        String file = "data/games.dat";
-
-        Scanner scanner = new Scanner(new File(file));
-        scanner.useDelimiter("\n");
-
-        while (scanner.hasNext()) {
-            String currentLine = scanner.nextLine();
-            String[] splitString = currentLine.split("\\s+");
-
-
-            GameScore game = new GameScore(splitString[0],
-                    Integer.parseInt(splitString[1].substring(splitString[1].indexOf("(") + 1, splitString[1].indexOf(")"))),
-                    splitString[splitString.length - 2],
-                    Integer.parseInt(splitString[splitString.length - 1].substring(splitString[splitString.length - 1].indexOf("(") + 1,
-                            splitString[splitString.length - 1].indexOf(")"))), 1, GameProgress.FINISHED.toString());
-            games.add(game);
-        }
-
-        return games;
-    }*/
-
-    /*public static ArrayList<GameScore> readGameScoresByWeek(int week)
-            throws IOException {
-        ArrayList<GameScore> gameScores = new ArrayList<>();
-        BufferedReader gamesStrBuffer = NflGamesPythonUtils.getScoresByWeek(week);
-
-        String line = null;
-        while ((line = gamesStrBuffer.readLine()) != null) {
-            String[] splitString = line.split("\\s+");
-
-
-            GameScore gameScore = new GameScore(splitString[0],
-                    Integer.parseInt(splitString[1].substring(splitString[1].indexOf("(") + 1, splitString[1].indexOf(")"))),
-                    splitString[splitString.length - 2],
-                    Integer.parseInt(splitString[splitString.length - 1].substring(splitString[splitString.length - 1].indexOf("(") + 1,
-                            splitString[splitString.length - 1].indexOf(")"))), 1, GameProgress.FINISHED.toString());
-            gameScores.add(gameScore);
-        }
-
-        return gameScores;
-    }*/
-
     public static ArrayList<Game> readGamesByWeek(int week)
             throws IOException {
         ArrayList<Game> games = new ArrayList<>();

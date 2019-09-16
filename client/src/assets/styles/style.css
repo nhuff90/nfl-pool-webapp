@@ -3659,6 +3659,7 @@ body.body-small .footer.fixed {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
   border: 1px solid #e7e7e7;
+  text-align: center;
 }
 .table > thead > tr > th {
   border-bottom: 1px solid #DDDDDD;
@@ -3859,6 +3860,7 @@ code {
   border-image: none;
   border-style: solid solid none;
   border-width: 1px 0;
+  overflow:scroll
 }
 .ibox-footer {
   color: inherit;

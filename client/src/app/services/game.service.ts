@@ -15,10 +15,7 @@ export class GameService {
     return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/games/active/' + week);
   }
 
-  getColumns(): string[]{
-    return ["Home Team", "Home Score", "vs.", "Away Team", "Away Score"]};
-
   getCurrentWeek() {
-    return 1;
+    return 2;
   }
 }

@@ -1,6 +1,6 @@
 package info.natehuff.nfl.data.mysql;
 
-import info.natehuff.nfl.data.mysql.model.Record;
+import info.natehuff.nfl.dto.Record;
 import info.natehuff.nfl.data.mysql.model.WeeklyRecord;
 import info.natehuff.nfl.data.mysql.respository.WeeklyRecordRepository;
 import info.natehuff.nfl.dto.PickWithGame;

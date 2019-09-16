@@ -39,7 +39,7 @@ public class PickController {
         return PickUtils.filterPicks(gameRepository.findGamesByWeek(week), pickRepository.findPicksByWeek(week));
     }
 
-    @GetMapping("/picks/record/{week}")
+    @GetMapping("/picks/weeklyStats/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public String getRecord(@PathVariable(value = "week") int week) {
         //return new ArrayList<>(repository.findPicksByWeek(week));

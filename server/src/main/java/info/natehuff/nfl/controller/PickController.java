@@ -3,11 +3,11 @@ package info.natehuff.nfl.controller;
 import info.natehuff.nfl.data.mysql.PickResultService;
 import info.natehuff.nfl.data.mysql.WeeklyRecordService;
 import info.natehuff.nfl.data.mysql.model.Pick;
-import info.natehuff.nfl.data.mysql.model.Record;
-import info.natehuff.nfl.data.mysql.model.WeeklyRecord;
 import info.natehuff.nfl.data.mysql.respository.PickRepository;
 import info.natehuff.nfl.data.mysql.respository.WeeklyRecordRepository;
+import info.natehuff.nfl.dto.AnnualStats;
 import info.natehuff.nfl.dto.PickWithGame;
+import info.natehuff.nfl.dto.WeeklyStats;
 import info.natehuff.nfl.repository.service.GameRepositoryService;
 import info.natehuff.nfl.utils.PickUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -54,17 +54,19 @@ public class PickController {
         return picksWithGame;
     }
 
-    @GetMapping("/picks/record/{week}")
+    @GetMapping("/picks/weeklyStats/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public WeeklyRecord getRecord(@PathVariable(value = "week") int week) {
+    public WeeklyStats getRecord(@PathVariable(value = "week") int week) {
         weeklyRecordService.saveWeeklyRecord(PickUtils.filterPicks(gameService.refreshGames(week),
                 pickRepository.findPicksByWeek(week)));
-        return weeklyRecordRepository.findById(week).get();
+        return new WeeklyStats(weeklyRecordRepository.findById(week).get(),
+                pickResultService.getWeeklyProfit(week));
     }
 
-    @GetMapping("/picks/record")
+    @GetMapping("/picks/annualStats")
     @CrossOrigin(origins = "http://localhost:4200")
-    public Record getOverallRecord() {
-        return weeklyRecordService.getOverallRecord();
+    public AnnualStats getAnnualStats() {
+        return new AnnualStats(weeklyRecordService.getOverallRecord(),
+                pickResultService.getOverallProfit());
     }
 }

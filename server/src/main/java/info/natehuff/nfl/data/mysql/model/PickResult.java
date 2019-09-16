@@ -14,12 +14,14 @@ public class PickResult {
     @OneToOne
     @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
     private Pick pick;
+    private int week;
     private boolean covered;
     private double netProfit;
 
     public PickResult(PickWithGame pickWithGame) {
         this.id = pickWithGame.getPick().getId();
         this.pick = pickWithGame.getPick();
+        this.week = pickWithGame.getPick().getWeek();
         this.covered = pickWithGame.isCovering();
         if (this.covered) {
             this.netProfit = pickWithGame.getPick().getToWin();
@@ -42,5 +44,13 @@ public class PickResult {
 
     public void setNetProfit(double netProfit) {
         this.netProfit = netProfit;
+    }
+
+    public int getWeek() {
+        return week;
+    }
+
+    public void setWeek(int week) {
+        this.week = week;
     }
 }
