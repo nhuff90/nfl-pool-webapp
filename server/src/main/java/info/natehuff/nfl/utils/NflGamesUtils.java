@@ -32,6 +32,7 @@ public class NflGamesUtils {
         String line = null;
         while ((line = gamesStrBuffer.readLine()) != null) {
 
+            System.out.println("Game List Line -- " + line);
             ObjectMapper mapper = new ObjectMapper();
             Map<String,Object> map = mapper.readValue(line, Map.class);
             String[] splitString = line.split("\\s+");

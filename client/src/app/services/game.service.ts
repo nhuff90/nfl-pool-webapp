@@ -8,14 +8,14 @@ export class GameService {
   constructor(private http: HttpClient) {}
 
   getGamesByWeek(week): Observable<any> {
-    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/games/' + week);
+    return this.http.get('http://nfl.natehuff.info/games/' + week);
   }
 
   getActiveGamesByWeek(week): Observable<any> {
-    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/games/active/' + week);
+    return this.http.get('http://nfl.natehuff.info/games/active/' + week);
   }
 
   getCurrentWeek() {
-    return 2;
+    return 3;
   }
 }

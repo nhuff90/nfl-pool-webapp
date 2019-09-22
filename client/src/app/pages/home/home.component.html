@@ -67,16 +67,18 @@
                                 </thead>
                                 <tbody>
                                 <tr *ngFor="let pickWithGame of picksWithGame | async">
-                                  <td><img src="assets/img/logos/{{pickWithGame.game.homeTeam}}.gif" width="50"
-                                           height="33"/></td>
-                                  <td><h1><b>{{pickWithGame.game.homeScore}}</b></h1></td>
-                                  <td><img src="assets/img/logos/{{pickWithGame.game.awayTeam}}.gif" width="50"
-                                           height="33"/></td>
-                                  <td><h1><b>{{pickWithGame.game.awayScore}}</b></h1></td>
-                                  <td>{{pickWithGame.pick.team}} {{pickWithGame.pick.line}}</td>
-                                  <td>{{pickWithGame.pick.risked | currency:'USD':true:'1.2-2'}}</td>
-                                  <td>{{pickWithGame.pick.toWin | currency:'USD':true:'1.2-2'}}</td>
-                                  <td>
+                                  <td class="game-cell">
+                                    <img src="assets/img/logos/{{pickWithGame.game.homeTeam}}.gif" width="50"
+                                         height="33"/><br> {{pickWithGame.game.homeTeam}}<div class="game-cell-score">{{pickWithGame.game.homeScore}}</div>
+                                    <br>
+                                    <img src="assets/img/logos/{{pickWithGame.game.awayTeam}}.gif" width="50"
+                                         height="33"/><br> {{pickWithGame.game.awayTeam}}<div class="game-cell-score">{{pickWithGame.game.awayScore}}</div>
+                                  </td>
+                                  <td class="non-game-cell">{{pickWithGame.game.gameProgress}}</td>
+                                  <td class="non-game-cell">{{pickWithGame.pick.team}} {{pickWithGame.pick.line}}</td>
+                                  <td class="non-game-cell">{{pickWithGame.pick.risked | currency:'USD':true:'1.2-2'}}</td>
+                                  <td class="non-game-cell">{{pickWithGame.pick.toWin | currency:'USD':true:'1.2-2'}}</td>
+                                  <td class="non-game-cell">
                                     <div *ngIf="pickWithGame.game.gameProgress === 'Not Started'">
                                       <span class="label label-not-started">Not Started</span>
                                     </div>

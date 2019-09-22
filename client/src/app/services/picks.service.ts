@@ -9,21 +9,21 @@ export class PicksService {
 
 
   getPicksByWeek(week): Observable<any> {
-    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/picks/' + week);
+    return this.http.get('http://nfl.natehuff.info/picks/' + week);
   }
 
   getWeeklyStats(week): Observable<any> {
-    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/picks/weeklyStats/' + week);
+    return this.http.get('http://nfl.natehuff.info/picks/weeklyStats/' + week);
   }
 
   getAnnualStats(): Observable<any> {
-    return this.http.get('http://ec2-18-224-61-229.us-east-2.compute.amazonaws.com/picks/annualStats/');
+    return this.http.get('http://nfl.natehuff.info/picks/annualStats/');
   }
 
   getColumns(): string[]{
-    return ["Home Team", "Home Score", "Away Team", "Away Score", "Line", "Risked", "To Win", "Covering?"]};
+    return ["Game", "Progress", "Line", "Risked", "To Win", "Covering?"]};
 
   getCurrentWeek() {
-    return 2;
+    return 3;
   }
 }
