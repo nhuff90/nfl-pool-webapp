@@ -99,6 +99,52 @@
                                     </div>
                                   </td>
                                 </tr>
+                                <tr *ngFor="let picksWithGame of parleyPicksWithGame | async">
+                                  <td class="game-cell">
+                                    <div *ngFor="let pickWithGame of picksWithGame">
+                                    <img src="assets/img/logos/{{pickWithGame.game.homeTeam}}.gif" width="50"
+                                         height="33"/><br> {{pickWithGame.game.homeTeam}}
+                                      <div class="game-cell-score">{{pickWithGame.game.homeScore}}</div>
+                                    <br>
+                                    <img src="assets/img/logos/{{pickWithGame.game.awayTeam}}.gif" width="50"
+                                         height="33"/><br> {{pickWithGame.game.awayTeam}}
+                                      <div class="game-cell-score">{{pickWithGame.game.awayScore}}</div>
+                                    </div>
+                                  </td>
+                                  <td class="non-game-cell">
+                                    <div *ngFor="let pickWithGame of picksWithGame">{{pickWithGame.game.gameProgress}}
+                                    </div>
+                                  </td>
+                                  <td class="non-game-cell">
+                                    <div *ngFor="let pickWithGame of picksWithGame">
+                                      {{pickWithGame.pick.team}} {{pickWithGame.pick.line}}
+                                    </div>
+                                  </td>
+                                  <td class="non-game-cell">{{picksWithGame[0].pick.risked | currency:'USD':true:'1.2-2'}}</td>
+                                  <td class="non-game-cell">{{picksWithGame[0].pick.toWin | currency:'USD':true:'1.2-2'}}</td>
+                                  <td class="non-game-cell">
+                                    <div *ngFor="let pickWithGame of picksWithGame">
+                                    <div *ngIf="pickWithGame.game.gameProgress === 'Not Started'">
+                                      <span class="label label-not-started">Not Started</span>
+                                    </div>
+                                    <div *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering">
+                                      <span class="label label-covered">Win</span>
+                                    </div>
+                                    <div
+                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering">
+                                      <span class="label label-covering">Covering</span>
+                                    </div>
+                                    <div
+                                      *ngIf="pickWithGame.game.gameProgress === 'Finished' && !pickWithGame.covering">
+                                      <span class="label label-not-covered">Loss</span>
+                                    </div>
+                                    <div
+                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && !pickWithGame.covering">
+                                      <span class="label label-not-covering">Not Covering</span>
+                                    </div>
+                                    </div>
+                                  </td>
+                                </tr>
                                 </tbody>
                         </table>
                         </div>

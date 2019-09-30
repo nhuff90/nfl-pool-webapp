@@ -48,9 +48,17 @@ public class PickController {
 
     @GetMapping("/picks/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public Collection<PickWithGame> getPicks(@PathVariable(value = "week") int week) {
-        List<PickWithGame> picksWithGame = PickUtils.filterPicks(gameService.refreshGames(week), pickRepository.findPicksByWeek(week));
+    public Collection<PickWithGame> getNonParleyPicks(@PathVariable(value = "week") int week) {
+        List<PickWithGame> picksWithGame = PickUtils.filterPicks(gameService.refreshGames(week), pickRepository.findNonParleyPicksByWeek(week));
         pickResultService.saveCompletedResults(picksWithGame);
+        return picksWithGame;
+    }
+
+    @GetMapping("/picks/parley/{week}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public Collection<List<PickWithGame>> getParleyPicks(@PathVariable(value = "week") int week) {
+        Collection<List<PickWithGame>> picksWithGame = PickUtils.filterParleyPicks(gameService.refreshGames(week), pickRepository.findParleyPicksByWeek(week));
+        pickResultService.saveCompletedParleyResults(picksWithGame);
         return picksWithGame;
     }
 

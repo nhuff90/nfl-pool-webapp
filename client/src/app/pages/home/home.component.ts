@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
 
   selectedWeek: number;
   picksWithGame: Observable<any[]>;
+  parleyPicksWithGame: Observable<any[]>;
   columns: string[];
   weeklyStats: Observable<any[]>;
   annualStats: Observable<any[]>;
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
     this.selectedWeek = this.atService.getCurrentWeek();
     this.columns = this.atService.getColumns();
     this.picksWithGame = this.atService.getPicksByWeek(this.selectedWeek);
+    this.parleyPicksWithGame = this.atService.getParleyPicksByWeek(this.selectedWeek);
     this.gameService.getActiveGamesByWeek(this.selectedWeek).subscribe(data => {this.activeGames = data.lengthFromService});
     this.atService.getWeeklyStats(this.selectedWeek).subscribe(res => {
       this.weeklyStats = res;
@@ -42,6 +44,7 @@ export class HomeComponent implements OnInit {
     console.log('home updatePicksByWeek called.');
     this.selectedWeek = week;
     this.picksWithGame = this.atService.getPicksByWeek(this.selectedWeek);
+    this.parleyPicksWithGame = this.atService.getParleyPicksByWeek(this.selectedWeek);
     this.gameService.getActiveGamesByWeek(this.selectedWeek).subscribe(data => {this.activeGames = data.lengthFromService});
     this.atService.getWeeklyStats(this.selectedWeek).subscribe(res => {
       this.weeklyStats = res;
