@@ -11,5 +11,9 @@ public interface PickRepository extends CrudRepository<Pick, Integer> {
 
     @Query("SELECT p FROM pick p where p.week = :week")
     List<Pick> findPicksByWeek(@Param("week") Integer week);
+    @Query("SELECT p FROM pick p where p.week = :week and p.parleyId is null")
+    List<Pick> findNonParleyPicksByWeek(@Param("week") Integer week);
+    @Query("SELECT p FROM pick p where p.week = :week and p.parleyId is not null")
+    List<Pick> findParleyPicksByWeek(@Param("week") Integer week);
 
 }

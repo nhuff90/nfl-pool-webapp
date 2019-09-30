@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+import java.util.Collection;
 import java.util.List;
 
 @Configuration
@@ -25,6 +26,30 @@ public class PickResultService {
                 PickResult pickResult = new PickResult(pickWithGame);
                 System.out.println("Saving game.");
                 pickResultRespository.save(pickResult);
+            }
+        }
+    }
+
+    @Async
+    public void saveCompletedParleyResults(Collection<List<PickWithGame>> picksWithGame) {
+
+        for (List<PickWithGame> pickWithGameList : picksWithGame) {
+            boolean allGamesComplete = true;
+            boolean allPicksCovered = true;
+            PickWithGame savedPickWithGame = null;
+            for (PickWithGame pickWithGame : pickWithGameList) {
+                if (!pickWithGame.getGame().getGameProgress().equalsIgnoreCase(GameProgress.FINISHED.toString())) {
+                    allGamesComplete = false;
+                    break;
+                }
+                if (!pickWithGame.isCovering()) {
+                    allPicksCovered = false;
+                }
+                savedPickWithGame = pickWithGame;
+            }
+            if (allGamesComplete && savedPickWithGame != null) {
+                System.out.println("Saving parley game.");
+                pickResultRespository.save(new PickResult(savedPickWithGame, allPicksCovered));
             }
         }
     }

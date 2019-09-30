@@ -6,8 +6,7 @@ import info.natehuff.nfl.dto.PickWithGame;
 import info.natehuff.nfl.dto.enums.GameProgress;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PickUtils {
 
@@ -49,6 +48,28 @@ public class PickUtils {
             }
         }
         return picksToReturn;
+    }
+
+    public static Collection<List<PickWithGame>> filterParleyPicks (List<Game> games, List<Pick> parleyPicksThisWeek) {
+        Map<String, List<PickWithGame>> mapToReturn = new HashMap<>();
+        for (Pick pick : parleyPicksThisWeek) {
+            for (Game game : games) {
+                if (game.getHomeTeam().equals(pick.getTeam()) ||
+                        game.getAwayTeam().equals(pick.getTeam())) {
+
+                    if (mapToReturn.get(pick.getParleyId()) == null) {
+                        List<PickWithGame> picksToReturn = new ArrayList<>();
+                        picksToReturn.add(new PickWithGame(pick, game, PickUtils.isCovering(game, pick)));
+                        mapToReturn.put(pick.getParleyId(), picksToReturn);
+                    } else {
+                        mapToReturn.get(pick.getParleyId()).add(new PickWithGame(pick, game, PickUtils.isCovering(game, pick)));
+                    }
+
+                    break;
+                }
+            }
+        }
+        return new ArrayList(mapToReturn.values());
     }
 
     public static String getOverallRecord() {

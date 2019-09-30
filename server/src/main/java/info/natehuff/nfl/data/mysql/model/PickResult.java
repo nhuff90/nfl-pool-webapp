@@ -29,6 +29,17 @@ public class PickResult {
             this.netProfit = pickWithGame.getPick().getRisked() * -1;
         }
     }
+    public PickResult(PickWithGame pickWithGame, boolean covered) {
+        this.id = pickWithGame.getPick().getId();
+        this.pick = pickWithGame.getPick();
+        this.week = pickWithGame.getPick().getWeek();
+        this.covered = covered;
+        if (this.covered) {
+            this.netProfit = pickWithGame.getPick().getToWin();
+        } else {
+            this.netProfit = pickWithGame.getPick().getRisked() * -1;
+        }
+    }
 
     public boolean getCovered() {
         return covered;

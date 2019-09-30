@@ -17,6 +17,7 @@ public class Pick {
     private double toWin;
     @OneToOne(mappedBy="pick", cascade=CascadeType.ALL)
     private PickResult pickResult;
+    private String parleyId;
 
     public Integer getId() {
         return id;
@@ -66,4 +67,25 @@ public class Pick {
         this.toWin = toWin;
     }
 
+    public String getParleyId() {
+        return parleyId;
+    }
+
+    public void setParleyId(String parleyId) {
+        this.parleyId = parleyId;
+    }
+
+    @Override
+    public String toString() {
+        return "Pick{" +
+                "id=" + id +
+                ", team='" + team + '\'' +
+                ", line=" + line +
+                ", week=" + week +
+                ", risked=" + risked +
+                ", toWin=" + toWin +
+                ", pickResult=" + pickResult +
+                ", parleyId='" + parleyId + '\'' +
+                '}';
+    }
 }
