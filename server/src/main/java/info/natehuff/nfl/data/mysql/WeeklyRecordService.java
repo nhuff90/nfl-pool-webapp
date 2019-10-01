@@ -1,5 +1,6 @@
 package info.natehuff.nfl.data.mysql;
 
+import info.natehuff.nfl.data.mysql.model.PickResult;
 import info.natehuff.nfl.dto.Record;
 import info.natehuff.nfl.data.mysql.model.WeeklyRecord;
 import info.natehuff.nfl.data.mysql.respository.WeeklyRecordRepository;
@@ -20,8 +21,15 @@ public class WeeklyRecordService {
         this.weeklyRecordRepository = weeklyRecordRepository;
     }
     @Async
-    public void saveWeeklyRecord(List<PickWithGame> picksWithGame) {
+    public void saveWeeklyRecord(int week, Integer[] nonParleyRecord, Integer[] parleyRecord) {
+        WeeklyRecord weeklyRecord = new WeeklyRecord(week, wins, losses);
+        weeklyRecordRepository.save(weeklyRecord);
+    }
 
+    @Async
+    public Integer[] getNonParleyRecord(List<PickWithGame> picksWithGame) {
+
+        Integer[] intArray = new Integer[2];
         int wins = 0;
         int losses = 0;
         int week = 0;
@@ -36,8 +44,39 @@ public class WeeklyRecordService {
                 }
             }
         }
-        WeeklyRecord weeklyRecord = new WeeklyRecord(week, wins, losses);
-        weeklyRecordRepository.save(weeklyRecord);
+        intArray[0] = wins;
+        intArray[1] = losses;
+        return intArray;
+    }
+
+    @Async
+    public Integer[] getParleyRecord(List<PickWithGame> picksWithGame) {
+
+        Integer[] intArray = new Integer[2];
+        int wins = 0;
+        int losses = 0;
+        int week = 0;
+
+        for (List<PickWithGame> pickWithGameList : picksWithGame) {
+            boolean allGamesComplete = true;
+            boolean allPicksCovered = true;
+            PickWithGame savedPickWithGame = null;
+            for (PickWithGame pickWithGame : pickWithGameList) {
+                if (!pickWithGame.getGame().getGameProgress().equalsIgnoreCase(GameProgress.FINISHED.toString())) {
+                    allGamesComplete = false;
+                    break;
+                }
+                if (!pickWithGame.isCovering()) {
+                    allPicksCovered = false;
+                }
+                savedPickWithGame = pickWithGame;
+            }
+            if (allGamesComplete && savedPickWithGame != null) {
+                System.out.println("Saving parley game.");
+                pickResultRespository.save(new PickResult(savedPickWithGame, allPicksCovered));
+            }
+        }
+
     }
 
     public Record getOverallRecord() {
