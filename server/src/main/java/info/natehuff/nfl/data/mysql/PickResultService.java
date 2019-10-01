@@ -42,14 +42,15 @@ public class PickResultService {
                     allGamesComplete = false;
                     break;
                 }
-                if (!pickWithGame.isCovering()) {
+                if (pickWithGame.getCovering() != PickWithGame.Covered.COVERED) {
                     allPicksCovered = false;
                 }
                 savedPickWithGame = pickWithGame;
             }
             if (allGamesComplete && savedPickWithGame != null) {
                 System.out.println("Saving parley game.");
-                pickResultRespository.save(new PickResult(savedPickWithGame, allPicksCovered));
+                pickResultRespository.save(new PickResult(savedPickWithGame,
+                        (allPicksCovered) ? PickWithGame.Covered.COVERED : PickWithGame.Covered.LOSS ));
             }
         }
     }

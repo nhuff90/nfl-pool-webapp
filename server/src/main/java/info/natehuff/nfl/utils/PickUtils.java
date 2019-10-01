@@ -10,7 +10,7 @@ import java.util.*;
 
 public class PickUtils {
 
-    public static boolean isCovering(Game game, Pick pick) {
+    public static PickWithGame.Covered isCovering(Game game, Pick pick) {
         double line = pick.getLine();
         if (game.getGameProgress() != GameProgress.NOT_STARTED.toString()) {
             double homeAdjustedScore = Double.parseDouble(game.getHomeScore());
@@ -18,20 +18,24 @@ public class PickUtils {
             if (pick.getTeam().equalsIgnoreCase(game.getHomeTeam())) {
                 homeAdjustedScore = homeAdjustedScore + line;
                 if (homeAdjustedScore > awayAdjustedScore) {
-                    return true;
+                    return PickWithGame.Covered.COVERED;
+                } else if (homeAdjustedScore == awayAdjustedScore) {
+                    return PickWithGame.Covered.TIED;
                 } else {
-                    return false;
+                    return PickWithGame.Covered.LOSS;
                 }
             } else {
                 awayAdjustedScore = awayAdjustedScore + line;
                 if (awayAdjustedScore > homeAdjustedScore) {
-                    return true;
+                    return PickWithGame.Covered.COVERED;
+                } else if (homeAdjustedScore == awayAdjustedScore) {
+                    return PickWithGame.Covered.TIED;
                 } else {
-                    return false;
+                    return PickWithGame.Covered.LOSS;
                 }
             }
         } else {
-            return false;
+            return PickWithGame.Covered.LOSS;
         }
     }
 

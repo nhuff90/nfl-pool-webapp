@@ -65,8 +65,9 @@ public class PickController {
     @GetMapping("/picks/weeklyStats/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public WeeklyStats getRecord(@PathVariable(value = "week") int week) {
-        weeklyRecordService.saveWeeklyRecord(PickUtils.filterPicks(gameService.refreshGames(week),
-                pickRepository.findPicksByWeek(week)));
+        weeklyRecordService.saveWeeklyRecord(week, PickUtils.filterPicks(gameService.refreshGames(week),
+                pickRepository.findNonParleyPicksByWeek(week)),
+                PickUtils.filterParleyPicks(gameService.refreshGames(week), pickRepository.findParleyPicksByWeek(week)));
         return new WeeklyStats(weeklyRecordRepository.findById(week).get(),
                 pickResultService.getWeeklyProfit(week));
     }

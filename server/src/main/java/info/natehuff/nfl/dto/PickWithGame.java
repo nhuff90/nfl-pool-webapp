@@ -3,13 +3,17 @@ package info.natehuff.nfl.dto;
 import info.natehuff.nfl.data.mysql.model.Pick;
 
 public class PickWithGame {
+    public enum Covered
+    {
+        COVERED, LOSS, TIED;
+    }
 
-    Pick pick;
-    Game game;
-    boolean isCovering;
+    private Pick pick;
+    private Game game;
+    private Covered isCovering;
 
 
-    public PickWithGame(Pick pick, Game game, boolean isCovering) {
+    public PickWithGame(Pick pick, Game game, Covered isCovering) {
         this.pick = pick;
         this.game = game;
         this.isCovering = isCovering;
@@ -31,12 +35,12 @@ public class PickWithGame {
         this.game = game;
     }
 
-    public boolean isCovering() {
+    public Covered getCovering() {
         return isCovering;
     }
 
-    public void setCovering(boolean isCovering) {
-        isCovering = isCovering;
+    public void setCovering(Covered isCovering) {
+        this.isCovering = isCovering;
     }
 
     @Override
@@ -44,7 +48,7 @@ public class PickWithGame {
         return "PickWithGame{" +
                 "pick=" + pick +
                 ", gameScore=" + game +
-                ", isCovering=" + isCovering +
+                ", getCovering=" + isCovering +
                 '}';
     }
 }

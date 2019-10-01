@@ -15,38 +15,42 @@ public class PickResult {
     @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
     private Pick pick;
     private int week;
-    private boolean covered;
+    private String covered;
     private double netProfit;
 
     public PickResult(PickWithGame pickWithGame) {
         this.id = pickWithGame.getPick().getId();
         this.pick = pickWithGame.getPick();
         this.week = pickWithGame.getPick().getWeek();
-        this.covered = pickWithGame.isCovering();
-        if (this.covered) {
+        this.covered = pickWithGame.getCovering().name();
+        if (this.covered == PickWithGame.Covered.COVERED.name()) {
             this.netProfit = pickWithGame.getPick().getToWin();
-        } else {
+        } else if (this.covered == PickWithGame.Covered.LOSS.name()){
             this.netProfit = pickWithGame.getPick().getRisked() * -1;
+        } else {
+            this.netProfit = 0;
         }
     }
-    public PickResult(PickWithGame pickWithGame, boolean covered) {
+    public PickResult(PickWithGame pickWithGame, PickWithGame.Covered covered) {
         this.id = pickWithGame.getPick().getId();
         this.pick = pickWithGame.getPick();
         this.week = pickWithGame.getPick().getWeek();
-        this.covered = covered;
-        if (this.covered) {
+        this.covered = covered.name();
+        if (this.covered == PickWithGame.Covered.COVERED.name()) {
             this.netProfit = pickWithGame.getPick().getToWin();
-        } else {
+        } else if (this.covered == PickWithGame.Covered.LOSS.name()){
             this.netProfit = pickWithGame.getPick().getRisked() * -1;
+        } else {
+            this.netProfit = 0;
         }
     }
 
-    public boolean getCovered() {
+    public String getCovered() {
         return covered;
     }
 
-    public void setCovered(boolean covered) {
-        this.covered = covered;
+    public void setCovered(PickWithGame.Covered covered) {
+        this.covered = covered.name();
     }
 
     public double getNetProfit() {

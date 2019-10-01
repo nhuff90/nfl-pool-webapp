@@ -82,20 +82,28 @@
                                     <div *ngIf="pickWithGame.game.gameProgress === 'Not Started'">
                                       <span class="label label-not-started">Not Started</span>
                                     </div>
-                                    <div *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering">
+                                    <div *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering === 'COVERED'">
                                       <span class="label label-covered">Win</span>
                                     </div>
                                     <div
-                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering">
+                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering === 'COVERED'">
                                       <span class="label label-covering">Covering</span>
                                     </div>
                                     <div
-                                      *ngIf="pickWithGame.game.gameProgress === 'Finished' && !pickWithGame.covering">
+                                      *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering === 'LOSS'">
                                       <span class="label label-not-covered">Loss</span>
                                     </div>
                                     <div
-                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && !pickWithGame.covering">
+                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering === 'LOSS'">
                                       <span class="label label-not-covering">Not Covering</span>
+                                    </div>
+                                    <div
+                                      *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering === 'TIED'">
+                                      <span class="label label-not-covered">Pushed</span>
+                                    </div>
+                                    <div
+                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering === 'TIED'">
+                                      <span class="label label-not-covering">Pushing</span>
                                     </div>
                                   </td>
                                 </tr>
@@ -124,24 +132,32 @@
                                   <td class="non-game-cell">{{picksWithGame[0].pick.toWin | currency:'USD':true:'1.2-2'}}</td>
                                   <td class="non-game-cell">
                                     <div *ngFor="let pickWithGame of picksWithGame">
-                                    <div *ngIf="pickWithGame.game.gameProgress === 'Not Started'">
-                                      <span class="label label-not-started">Not Started</span>
-                                    </div>
-                                    <div *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering">
-                                      <span class="label label-covered">Win</span>
-                                    </div>
-                                    <div
-                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering">
-                                      <span class="label label-covering">Covering</span>
-                                    </div>
-                                    <div
-                                      *ngIf="pickWithGame.game.gameProgress === 'Finished' && !pickWithGame.covering">
-                                      <span class="label label-not-covered">Loss</span>
-                                    </div>
-                                    <div
-                                      *ngIf="pickWithGame.game.gameProgress === 'In Progress' && !pickWithGame.covering">
-                                      <span class="label label-not-covering">Not Covering</span>
-                                    </div>
+                                      <div *ngIf="pickWithGame.game.gameProgress === 'Not Started'">
+                                        <span class="label label-not-started">Not Started</span>
+                                      </div>
+                                      <div *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering === 'COVERED'">
+                                        <span class="label label-covered">Win</span>
+                                      </div>
+                                      <div
+                                        *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering === 'COVERED'">
+                                        <span class="label label-covering">Covering</span>
+                                      </div>
+                                      <div
+                                        *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering === 'LOSS'">
+                                        <span class="label label-not-covered">Loss</span>
+                                      </div>
+                                      <div
+                                        *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering === 'LOSS'">
+                                        <span class="label label-not-covering">Not Covering</span>
+                                      </div>
+                                      <div
+                                        *ngIf="pickWithGame.game.gameProgress === 'Finished' && pickWithGame.covering === 'TIED'">
+                                        <span class="label label-not-covered">Pushed</span>
+                                      </div>
+                                      <div
+                                        *ngIf="pickWithGame.game.gameProgress === 'In Progress' && pickWithGame.covering === 'TIED'">
+                                        <span class="label label-not-covering">Pushing</span>
+                                      </div>
                                     </div>
                                   </td>
                                 </tr>

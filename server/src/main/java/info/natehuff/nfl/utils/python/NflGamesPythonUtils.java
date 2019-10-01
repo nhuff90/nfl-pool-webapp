@@ -38,15 +38,15 @@ public class NflGamesPythonUtils {
 
         try {
             String pythonScriptCommand;
-            String pythonFilePath = "/python/nfl-games.py";
-            //String pythonFilePath = "python/nfl-games.py";
+            // String pythonFilePath = "/python/nfl-games.py";
+            String pythonFilePath = "python/nfl-games.py";
             System.out.println("This is the pthon path: " + pythonFilePath);
             if (active == null && completed == null) {
-                pythonScriptCommand = "python3 " + pythonFilePath + " " + week;
-                //pythonScriptCommand = "python " + pythonFilePath + " " + week;
+                // pythonScriptCommand = "python3 " + pythonFilePath + " " + week;
+                pythonScriptCommand = "python " + pythonFilePath + " " + week;
             } else {
-                pythonScriptCommand = "python3 " + pythonFilePath + " " + week + " " + active + " " + completed;
-                //pythonScriptCommand = "python " + pythonFilePath + " " + week + " " + active + " " + completed;
+                // pythonScriptCommand = "python3 " + pythonFilePath + " " + week + " " + active + " " + completed;
+                pythonScriptCommand = "python " + pythonFilePath + " " + week + " " + active + " " + completed;
             }
             System.out.println("This is the python scrip[t: " + pythonScriptCommand);
             Process p = Runtime.getRuntime().exec(pythonScriptCommand);
