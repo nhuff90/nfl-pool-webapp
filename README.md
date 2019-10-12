@@ -13,9 +13,9 @@ docker push nhuff90/nfl-app:prod
 
 Powershell:
 Invoke-Expression -Command (Get-ECRLoginCommand -Region us-east-2).Command
-docker build -t nfl-web-app-repo:latest .
-docker tag nfl-web-app-repo:latest 117837584658.dkr.ecr.us-east-2.amazonaws.com/nfl-web-app-repo:latest
-docker push 117837584658.dkr.ecr.us-east-2.amazonaws.com/nfl-web-app-repo:latest
+docker build -t nfl-web-app-repo:v0.0.12 .
+docker tag nfl-web-app-repo:v0.0.12 117837584658.dkr.ecr.us-east-2.amazonaws.com/nfl-web-app-repo:v0.0.12
+docker push 117837584658.dkr.ecr.us-east-2.amazonaws.com/nfl-web-app-repo:v0.0.12
 
 
 EC2:

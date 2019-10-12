@@ -49,7 +49,7 @@ public class PickController {
     @GetMapping("/picks/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<PickWithGame> getNonParleyPicks(@PathVariable(value = "week") int week) {
-        List<PickWithGame> picksWithGame = PickUtils.filterPicks(gameService.refreshGames(week), pickRepository.findNonParleyPicksByWeek(week));
+        List<PickWithGame> picksWithGame = PickUtils.filterPicks(gameService.getGames(week), pickRepository.findNonParleyPicksByWeek(week));
         pickResultService.saveCompletedResults(picksWithGame);
         return picksWithGame;
     }
@@ -57,7 +57,7 @@ public class PickController {
     @GetMapping("/picks/parley/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<List<PickWithGame>> getParleyPicks(@PathVariable(value = "week") int week) {
-        Collection<List<PickWithGame>> picksWithGame = PickUtils.filterParleyPicks(gameService.refreshGames(week), pickRepository.findParleyPicksByWeek(week));
+        Collection<List<PickWithGame>> picksWithGame = PickUtils.filterParleyPicks(gameService.getGames(week), pickRepository.findParleyPicksByWeek(week));
         pickResultService.saveCompletedParleyResults(picksWithGame);
         return picksWithGame;
     }
@@ -65,9 +65,9 @@ public class PickController {
     @GetMapping("/picks/weeklyStats/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public WeeklyStats getRecord(@PathVariable(value = "week") int week) {
-        weeklyRecordService.saveWeeklyRecord(week, PickUtils.filterPicks(gameService.refreshGames(week),
+        weeklyRecordService.saveWeeklyRecord(week, PickUtils.filterPicks(gameService.getGames(week),
                 pickRepository.findNonParleyPicksByWeek(week)),
-                PickUtils.filterParleyPicks(gameService.refreshGames(week), pickRepository.findParleyPicksByWeek(week)));
+                PickUtils.filterParleyPicks(gameService.getGames(week), pickRepository.findParleyPicksByWeek(week)));
         return new WeeklyStats(weeklyRecordRepository.findById(week).get(),
                 pickResultService.getWeeklyProfit(week));
     }

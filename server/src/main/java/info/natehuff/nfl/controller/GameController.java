@@ -27,6 +27,6 @@ public class GameController {
     @GetMapping("/games/{week}")
     @CrossOrigin(origins = "http://localhost:4200")
     public Collection<Game> getGamesByWeek(@PathVariable(value="week") int week) {
-        return gameService.refreshGames(week);
+        return gameService.getGames(week);
     }
 }
